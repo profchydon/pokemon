@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Api\Http\Controllers\pokemon;
+namespace App\Http\Controllers\Api\pokemon;
 
 use Illuminate\Foundation\Auth\Access\AuthorizesRequests;
 use Illuminate\Foundation\Bus\DispatchesJobs;
