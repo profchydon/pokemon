@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Repositories\pokemon;
+namespace App\Http\Repositories\pokemon;
 
 use App\Models\Pokemon;
 use Illuminate\Http\Request;
@@ -8,9 +8,10 @@ use Illuminate\Http\Request;
 class UpdatePokemonRepository
 {
 
-    public function _handle()
+    public function _handle($request)
     {
-        return Pokemon::simplePaginate(20);
+        $pokemon = Pokemon::whereId($request['id'])->first();
+        return $pokemon->update($request);
     }
 
   }
