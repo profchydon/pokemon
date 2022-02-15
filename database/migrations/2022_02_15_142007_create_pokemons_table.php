@@ -21,7 +21,7 @@ class CreatePokemonsTable extends Migration
             $table->integer('weight');
             $table->integer('base_experience');
             $table->integer('order');
-            $table->bool('is_default')->default(1);
+            $table->boolean('is_default')->default(1);
             $table->timestamps();
         });
     }
