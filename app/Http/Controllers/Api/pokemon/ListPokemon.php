@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Api\Http\Controllers\pokemon;
+namespace App\Http\Controllers\Api\pokemon;
 
 use App\Http\Repositories\pokemon\ListPokemonRepository;
 use Illuminate\Http\Response;
