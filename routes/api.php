@@ -13,7 +13,15 @@ use Illuminate\Support\Facades\Route;
 | is assigned the "api" middleware group. Enjoy building your API!
 |
 */
+use App\Http\Controllers\Api\pokemon\ListPokemon;
+use App\Http\Controllers\Api\pokemon\FindPokemon;
+use App\Http\Controllers\Api\pokemon\UpdatePokemon;
 
-Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
-    return $request->user();
+
+$router->group(['prefix' => 'api/v1'], function () use ($router) {
+
+    $router->group(['middleware' => ['throttle:10,1']], function () use ($router) {
+        $router->get('pokemon/all', ListPokemon::class);
+    });
+
 });
