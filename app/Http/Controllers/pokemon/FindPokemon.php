@@ -26,4 +26,6 @@ class FindPokemon extends Controller
         
         return view('pokemon.details', ['pokemon' => $pokemon]);
     }
+
+
 }
