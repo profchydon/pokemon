@@ -2,6 +2,8 @@
 
 namespace App\Api\V1\Controllers\pokemon;
 
+use Illuminate\Database\Eloquent\ModelNotFoundException;
+use Symfony\Component\Translation\Exception\NotFoundResourceException;
 use App\Http\Repositories\pokemon\ListPokemonRepository;
 use Illuminate\Http\Response;
 
@@ -22,7 +24,16 @@ class ListPokemon extends Controller
      */
     public function __invoke()
     {
-        $pokemons = $this->pokemon->_handle();
-        return $this->response(Response::HTTP_OK, __('messages.record-fetched'), $pokemons);
+        try {
+            
+            $pokemons = $this->pokemon->_handle();
+            return $this->response(Response::HTTP_OK, __('messages.record-fetched'), $pokemons);
+
+        } catch (NotFoundResourceException | ModelNotFoundException $err) {
+            return $this->error(Response::HTTP_NOT_FOUND, __('messages.resource-not-found'));
+        } catch (\Throwable $th) {
+            //throw $th;
+        }
+        
     }
 }
