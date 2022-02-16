@@ -1,10 +1,9 @@
 <?php
 
-namespace App\Http\Controllers\Api\pokemon;
+namespace App\Api\V1\Controllers\pokemon;
 
 use App\Http\Repositories\pokemon\ListPokemonRepository;
 use Illuminate\Http\Response;
-use Illuminate\Http\Request;
 
 class ListPokemon extends Controller
 {

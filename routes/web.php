@@ -29,7 +29,7 @@ $router->group(['prefix' => 'pokemon'], function () use ($router) {
     // Find a pokemon
     Route::get('/find/{id}', FindPokemon::class);
 
-    // Find a pokemon
+    // Update a pokemon
     Route::post('/update', UpdatePokemon::class)->name('pokemon.update');
 
    
