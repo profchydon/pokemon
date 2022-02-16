@@ -1,5 +1,5 @@
 <!-- Edit Personnel details modal -->
-<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog"
+<div class="modal fade" id="Modal-{{$id}}" tabindex="-1" role="dialog"
 aria-labelledby="exampleModalLabel" aria-hidden="true">
 <div class="modal-dialog">
     <form class=""
@@ -23,37 +23,37 @@ aria-labelledby="exampleModalLabel" aria-hidden="true">
                 <label>Identifier</label>
                 <input id="identifier" type="text"
                     class="form-control @error('identifier') is-invalid @enderror"
-                    name="identifier" required value="{{$pokemon->identifier}}">
+                    name="identifier" value="{{$pokemon->identifier ?? ''}}">
                 <br />
 
                 <label>Species</label>
                 <input id="identifier" type="text"
                     class="form-control @error('species_id') is-invalid @enderror"
-                    name="species_id" required value="{{$pokemon->species_id}}">
+                    name="species_id" value="{{$pokemon->species_id ?? ''}}">
                 <br />
 
                 <label>Height</label>
                 <input id="height" type="text"
                     class="form-control @error('height') is-invalid @enderror"
-                    name="height" required value="{{$pokemon->height}}">
+                    name="height" value="{{$pokemon->height ?? ''}}">
                 <br />
 
                 <label>Weight</label>
                 <input id="identifier" type="text"
                     class="form-control @error('weight') is-invalid @enderror"
-                    name="weight" required value="{{$pokemon->weight}}">
+                    name="weight" required value="{{$pokemon->weight ?? ''}}">
                 <br />
 
                 <label>Base Experience</label>
                 <input id="base_experience" type="text"
                     class="form-control @error('base_experience') is-invalid @enderror"
-                    name="base_experience" required value="{{$pokemon->base_experience}}">
+                    name="base_experience" required value="{{$pokemon->base_experience ?? ''}}">
                 <br />
 
                 <label>Order</label>
                 <input id="order" type="text"
                     class="form-control @error('order') is-invalid @enderror"
-                    name="order" required value="{{$pokemon->order}}">
+                    name="order" required value="{{$pokemon->order ?? ''}}">
                 <br />
 
             </div>

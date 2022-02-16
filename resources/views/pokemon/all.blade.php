@@ -4,19 +4,6 @@
 
             <div class="max-w-6xl mx-auto sm:px-12 lg:px-12">
 
-                        @success
-                            <span class="invalid-feedback" role="alert">
-                                <strong>{{ $message ?? '' }}</strong>
-                            </span>
-                        @endsuccess
-
-                        {{-- @error
-                            <span class="invalid-feedback" role="alert">
-                                <strong>{{ $message ?? '' }}</strong>
-                            </span>
-                        @enderror --}}
- 
-
                 <div class="mt-12 bg-white dark:bg-gray-800 overflow-hidden shadow sm:rounded-lg">
 
                     <div class="grid grid-cols-1 md:grid-cols-2">
@@ -45,12 +32,13 @@
                               <td>{{ $pokemon->base_experience }}</td>
                               <td>{{ $pokemon->order }}</td>
                               <td>
-                                <a class="btn btn-sm btn-primary text-white" data-toggle="modal" data-target="#exampleModal">Edit</a>
+                                <a class="btn btn-sm btn-primary text-white" data-toggle="modal" data-target="#Modal-{{$pokemon->id}}">Edit</a>
                               </td>
                               <td>
                                 <a class="btn btn-sm btn-primary text-white" href="/pokemon/find/{{$pokemon->id}}">View</a>
                               </td>
                             </tr>
+                            @include('layouts.modal.edit', ['id' => $pokemon->id])
                           @endforeach
 
                         </tbody>
@@ -59,7 +47,7 @@
           
                     </div>
                 </div>
-                  @include('layouts.modal.edit')
+                  
             </div>
         </div>
     </body>
